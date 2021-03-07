@@ -82,14 +82,14 @@ void reverse_1d_array(int *arr_begin, int *arr_end) {
         if(size%2 == 0) {
             for (int i = 0; i < size/ 2; i++) {
                 int k = arr_begin[i];
-                arr_begin[i] = arr_end[size - 1 - i];
-                arr_end[size - 1 - i] = k;
+                arr_begin[i] = arr_begin[size - 1 - i];
+                arr_begin[size - 1 - i] = k;
             }
         }else{
             for (int i = 0; i <= size / 2; i++) {
                 int k = arr_begin[i];
-                arr_begin[i] = arr_end[size - 1 - i];
-                arr_end[size - 1 - i] = k;
+                arr_begin[i] = arr_begin[size - 1 - i];
+                arr_begin[size - 1 - i] = k;
             }
         }
     }
