@@ -103,7 +103,7 @@ vector<int> find_odd_numbers(vector<int> &arr) {
     vector<int> odd;
     if (!arr.empty()) {
         for (int i = 0; i<arr.size();i++) {
-            if (arr[i] % 2 == 1) {
+            if (arr[i] % 2 != 0) {
                 odd.push_back(arr[i]);
             }
         }
