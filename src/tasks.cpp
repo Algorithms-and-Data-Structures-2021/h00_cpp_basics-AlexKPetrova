@@ -77,9 +77,26 @@ void reverse_1d_array(vector<int> &arr) {
 // Задание 5
 void reverse_1d_array(int *arr_begin, int *arr_end) {
     if((arr_begin != nullptr)&(arr_end != nullptr)) {
-        int k = *arr_begin;
-        *arr_begin = *arr_end;
-        *arr_end = k;
+        int size = *arr_end - *arr_begin+1;
+
+        if(size%2 == 0) {
+            for (int i = 0; i < size/ 2; i++) {
+                int k = *arr_begin;
+                *arr_begin = *arr_end;
+                *arr_end = k;
+                arr_begin++;
+                arr_end--;
+            }
+        }else{
+            for (int i = 0; i <= size / 2; i++) {
+                int k = *arr_begin;
+                *arr_begin = *arr_end;
+                *arr_end = k;
+                arr_begin++;
+                arr_end--;
+            }
+        }
+
     }
 }
 
