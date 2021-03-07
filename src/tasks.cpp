@@ -21,7 +21,7 @@ void swap_args(int *lhs, int *rhs) {
 // Задание 2
 int **allocate_2d_array(int num_rows, int num_cols, int init_value) {
 
-    if((num_rows<0)|(num_cols<0)){
+    if((num_rows<=0)|(num_cols<=0)){
         return nullptr;
     }
 
@@ -31,11 +31,11 @@ int **allocate_2d_array(int num_rows, int num_cols, int init_value) {
     }
 
     for( int i = 0; i<num_rows;i++){
-        for( int j = 0; j<num_rows;j++){
+        for( int j = 0; j<num_cols;j++){
             arr[i][j] = init_value;
         }
     }
-    return 0;
+    return arr;
 }
 
 // Задание 3
