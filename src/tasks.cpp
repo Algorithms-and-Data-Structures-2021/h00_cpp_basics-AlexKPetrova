@@ -59,32 +59,71 @@ void reverse_1d_array(vector<int> &arr) {
     if(arr.empty()){
         return;
     }
-    for( int i = 0; i<=arr.size()/2; i++){
-        int k = arr[i];
-        arr[i] = arr[arr.size()-1-i];
-        arr[arr.size()-1-i] = k;
+    if(arr.size()%2 == 0) {
+        for (int i = 0; i < arr.size() / 2; i++) {
+            int k = arr[i];
+            arr[i] = arr[arr.size() - 1 - i];
+            arr[arr.size() - 1 - i] = k;
+        }
+    }else{
+        for (int i = 0; i <= arr.size() / 2; i++) {
+            int k = arr[i];
+            arr[i] = arr[arr.size() - 1 - i];
+            arr[arr.size() - 1 - i] = k;
+        }
     }
 }
 
 // Задание 5
 void reverse_1d_array(int *arr_begin, int *arr_end) {
-
+    if((arr_begin != nullptr)&(arr_end != nullptr)) {
+        int k = *arr_begin;
+        *arr_begin = *arr_end;
+        *arr_end = k;
+    }
 }
 
 // Задание 6
 int *find_max_element(int *arr, int size) {
-    // напишите код здесь ...
+
+    if((arr != nullptr)&(size>0)) {
+        int *max = &arr[0];
+        for( int i = 0; i<size; i++){
+            if(arr[i]>*max){
+                *max = arr[i];
+            }
+        }
+        return max ;
+    }
     return nullptr;
 }
 
 // Задание 7
 vector<int> find_odd_numbers(vector<int> &arr) {
-    // напишите код здесь ...
+
+    if (!arr.empty()) {
+        vector<int> odd;
+        for (int & i : arr) {
+            if (i % 2 == 1) {
+                odd.push_back(i);
+            }
+        }
+        return odd;
+    }
     return {};
 }
 
 // Задание 8
 vector<int> find_common_elements(vector<int> &arr_a, vector<int> &arr_b) {
-    // напишите код здесь ...
+
+    if ((!arr_a.empty())&(!arr_b.empty())) {
+        vector<int> joint;
+        for(int i = 0;i<arr_a.size();i++){
+            for(int j = 0; j < arr_b.size();j++){
+                joint.push_back(arr_a[i]);
+            }
+        }
+        return joint;
+    }
     return {};
 }
