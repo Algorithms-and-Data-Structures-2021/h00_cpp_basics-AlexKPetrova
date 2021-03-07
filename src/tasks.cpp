@@ -35,7 +35,7 @@ int **allocate_2d_array(int num_rows, int num_cols, int init_value) {
             arr[i][j] = init_value;
         }
     }
-    return arr;
+    return 0;
 }
 
 // Задание 3
