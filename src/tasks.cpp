@@ -115,15 +115,15 @@ vector<int> find_odd_numbers(vector<int> &arr) {
 
 // Задание 8
 vector<int> find_common_elements(vector<int> &arr_a, vector<int> &arr_b) {
-
+    vector<int> joint;
     if ((!arr_a.empty())&(!arr_b.empty())) {
-        vector<int> joint;
-        for(int i = 0;i<arr_a.size();i++){
-            for(int j = 0; j < arr_b.size();j++){
-                joint.push_back(arr_a[i]);
+        for(int i = 0; i<arr_a.size(); i++){
+            for(int j = 0; j < arr_b.size(); j++){
+                if(arr_a[i]== arr_b[j]) {
+                    joint.push_back(arr_a[i]);
+                }
             }
         }
-        return joint;
     }
-    return {};
+    return joint;
 }
