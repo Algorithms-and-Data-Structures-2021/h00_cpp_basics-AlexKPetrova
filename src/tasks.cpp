@@ -100,17 +100,15 @@ int *find_max_element(int *arr, int size) {
 
 // Задание 7
 vector<int> find_odd_numbers(vector<int> &arr) {
-
+    vector<int> odd;
     if (!arr.empty()) {
-        vector<int> odd;
-        for (int & i : arr) {
-            if (i % 2 == 1) {
-                odd.push_back(i);
+        for (int i = 0; i<arr.size();i++) {
+            if (arr[i] % 2 == 1) {
+                odd.push_back(arr[i]);
             }
         }
-        return odd;
     }
-    return {};
+    return odd;
 }
 
 // Задание 8
