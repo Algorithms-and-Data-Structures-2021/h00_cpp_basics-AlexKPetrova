@@ -56,7 +56,14 @@ bool copy_2d_array(int **arr_2d_source, int **arr_2d_target, int num_rows, int n
 
 // Задание 4
 void reverse_1d_array(vector<int> &arr) {
-    // напишите код здесь ...
+    if(arr.size() == 0){
+        return;
+    }
+    for( int i = arr.size()-1; i>=arr.size()/2; i--){
+        int k = arr[i];
+        arr[i] = arr[arr.size()-1-i];
+        arr[arr.size()-1-i] = k;
+    }
 }
 
 // Задание 5
